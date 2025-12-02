@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import SearchResults from './components/SearchResults';
+import Header from './components/header';
+import SongDetail from './components/SongDetail';
+import { ThemeProvider } from 'styled-components';
+import Theme from './theme';
+import GlobalStyle from './theme/GlobalStyles';
+
+
 
 function App() {
+  const [artist, setArtist] = useState('');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={Theme}>
+      <GlobalStyle />
+      <div className="App">
+        <Header appName="My Library Music"/>
+        <section className="main">
+          <div className='songs-section'>
+            <Routes>
+              <Route path='/SongDetail/:id' element={<SongDetail artist={artist}/>}/>
+              <Route path='/' element={<SearchResults setArtist={setArtist} artist={artist} className="search-results" />} />
+            </Routes>
+          </div>
+        </section>
+      </div>
+    </ThemeProvider>
+    
   );
 }
+
 
 export default App;
