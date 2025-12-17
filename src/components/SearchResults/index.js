@@ -15,7 +15,7 @@ const SearchResults = ({artist, setArtist}) => {
 
   return (
     <ResultsDiv>
-      <ResultsTitle>Albumes</ResultsTitle>
+      <ResultsTitle>Albums</ResultsTitle>
       <section>
         <SearchBar setArtist={setArtist} />
         <RenderAlbums albums={albums} artist={artist} isLoading={isLoading} error={error}/>

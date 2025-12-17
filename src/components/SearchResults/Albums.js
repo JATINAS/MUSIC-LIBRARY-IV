@@ -7,7 +7,7 @@ const RenderAlbums = ({albums, isLoading, error}) => {
   if (error) return <p>Error loading files</p>
 
   return (
-    <AlbumSection>
+    <AlbumSection role="grid" aria-label="Albums of the artist">
       {
         albums && albums.map((album) => {
           const {strAlbum, strArtist, idAlbum, strAlbumThumb} = album;
@@ -16,13 +16,14 @@ const RenderAlbums = ({albums, isLoading, error}) => {
             <AlbumArticle>
               <Link to={`/SongDetail/${idAlbum}`}>
                 <AlbumImg
-                  alt={`${strAlbum} Album Cover`}
+                  alt={`${strAlbum}-Album-Cover`}
                   src={`${strAlbumThumb}`}
                   width="200"
+                  role="img"
                 />
               </Link>
-              <AlbumTitle>{strAlbum}</AlbumTitle>
-              <p>{strArtist}</p>
+              <AlbumTitle aria-label="Title of the album">{strAlbum}</AlbumTitle>
+              <p aria-label="Artist name" role="dialog">{strArtist}</p>
             </AlbumArticle>
           );
         })
@@ -31,4 +32,4 @@ const RenderAlbums = ({albums, isLoading, error}) => {
   )
 };
 
-export default RenderAlbums
+export default RenderAlbums;

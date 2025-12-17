@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom";
 import { SongArticle, SongDetails, SongLoading, SongSubtitle, SongTitle } from "./styles";
 
-const SongDetail = ({artist}) => {
+const SongDetail = () => {
     const {id} = useParams();
     const [songState, setSongState] = useState ([{song: '', isLoading: true, error: null}]);
 
@@ -43,10 +43,8 @@ const SongDetail = ({artist}) => {
                             <SongTitle>{strAlbum.toUpperCase()}</SongTitle>
                             <SongSubtitle>{strArtist}</SongSubtitle>
                             <SongSubtitle>{intYearReleased}</SongSubtitle>
-                            <Link to={`/`}><button>Back</button></Link>
+                            <Link to={`/`}><button role="button" aria-label="Return to search results">Back</button></Link>
                         </SongArticle>
-
-                        
                     )
                 })
             }

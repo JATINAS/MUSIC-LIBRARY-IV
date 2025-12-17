@@ -30,6 +30,13 @@ ${reset}
             border-color: ${props => props.theme.colors.primaryButton};
             color: ${props => props.theme.colors.hoverButtonSecondary};
         }
+
+        &:focus {
+            background-color: ${props => props.theme.colors.primary};
+            color: ${props => props.theme.colors.tertiary};
+            border: 3px solid ${props => props.theme.colors.hoverButtonSecondary};
+            outline: none;
+        }
     }
 
     header {
@@ -48,9 +55,10 @@ ${reset}
         .header-nav {
             text-decoration: none;
             color: ${props => props.theme.colors.tertiary};
+            margin-inline-end: 20px;
 
             &:hover {
-                ${props => props.theme.colors.hoverButtonSecondary};
+                color: ${props => props.theme.colors.hoverButtonSecondary};
             }
         }
     }

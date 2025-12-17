@@ -24,8 +24,6 @@ const SongLoading = styled.p`
     font-size: 50px;
 `;
 
-
-
 export {
     SongDetails,
     SongArticle,

@@ -5,8 +5,9 @@ const Header = ({appName}) => {
         <header>
             <div>
                 <h1>{appName}</h1>
-                <nav >
-                    <Link className="header-nav" to="/">Search Results</Link>
+                <nav>
+                    <Link className="header-nav" to="/" aria-label="Go to Home page">Home</Link>
+                    <Link className="header-nav" to="/LoginUser" aria-label="Go to Login page">Login</Link>
                 </nav>
             </div>
         </header>

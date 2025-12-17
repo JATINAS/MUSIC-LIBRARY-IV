@@ -6,6 +6,7 @@ import SongDetail from './components/SongDetail';
 import { ThemeProvider } from 'styled-components';
 import Theme from './theme';
 import GlobalStyle from './theme/GlobalStyles';
+import LoginUser from './components/LoginUser';
 
 
 
@@ -20,8 +21,9 @@ function App() {
         <section className="main">
           <div className='songs-section'>
             <Routes>
-              <Route path='/SongDetail/:id' element={<SongDetail artist={artist}/>}/>
               <Route path='/' element={<SearchResults setArtist={setArtist} artist={artist} className="search-results" />} />
+              <Route path='/LoginUser' element={<LoginUser />} />
+              <Route path='/SongDetail/:id' element={<SongDetail artist={artist}/>}/>
             </Routes>
           </div>
         </section>

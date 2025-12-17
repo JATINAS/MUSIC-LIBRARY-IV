@@ -17,6 +17,11 @@ const NavTextInput = styled.input`
     border-radius: 50px;
     padding: 0 0 0 10px;
     font-size: 15px;
+
+    &:focus {
+        border: 3px solid #eda11b;
+        outline: none;
+    }
 `;
 
 export {

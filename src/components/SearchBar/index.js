@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { NavDiv, NavLabelInput, NavSection, NavTextInput } from "./styles"
 
-const SearchBar = ({setArtist, artist,isLoading, error}) => {
+const SearchBar = ({setArtist}) => {
     
     const [searchArtist, setSearchArtist] = useState({search:'', isLoading: true, error: null});
 
@@ -25,15 +25,16 @@ const SearchBar = ({setArtist, artist,isLoading, error}) => {
 
                 <form onSubmit={handleSubmit}>
                     <NavDiv>
-                        <NavLabelInput>Artist:</NavLabelInput>
+                        <NavLabelInput for="artist">Artist:</NavLabelInput>
                         <NavTextInput
                             type="text"
                             name="artist"
+                            id="artist"
                             value={searchArtist.artist}
                             onChange={(e) => handleChange(e)}
                         />
                     </NavDiv>
-                    <button type="submit">Search</button>
+                    <button type="submit"aria-label="Search Artist">Search</button>
                 </form>
 
         </NavSection>
